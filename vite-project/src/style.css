@@ -21,3 +21,7 @@ body {
     width: 120px;
     height: 120px;
 }
+
+.game {
+    display: flex;
+}
