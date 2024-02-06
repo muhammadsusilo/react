@@ -45,6 +45,7 @@ function App({xIsNext, squares, onPlay}) {
 
 export default function Game(){
   const [xIsNext, setXIsNext] = useState(true);
+  // const xIsNext = currentMove % 2 === 0 ;
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const currentSquares= history[currentMove];
@@ -103,7 +104,11 @@ function calculateWinner(squares){
   for (let index = 0; index < lines.length; index++) {
   const [a,b,c] = lines[index];
 
-  if(squares[a] === squares[b] && squares[b] === squares[c]){
+  // if(squares[a] && squares[a] === squares[b] && squares[c]){
+  //   return squares[a];
+  //   } //bug
+
+  if (squares[a] === squares[b] && squares[b] === squares[c]){
     return squares[a];
     }
   }
